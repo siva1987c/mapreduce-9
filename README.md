@@ -9,14 +9,10 @@ on Amazon EC2 servers as well.
 Parameters can be specified in the configuration file, titled conf.xml
 
 ###Usage:
-Convert your input .txt file into a .seq file that is readable by hadoop
+Convert your input .txt file into a .seq file that is readable by hadoop  
 `make generate-input myinput=YOUR_INPUT_FILE.txt`
 
 You can launch a hadoop job by running the following command:
 `$ hadoop jar proj1.jar Proj1 -conf conf.xml <params> <input> <intermediateDir> <outDir>`
 
-<params> set `-Dcombiner=true` to turn combiner on or `-Dcombiner=false` to turn it off  
-         set `-DrunJob2=true` to run the second job or `-DrunJob2=false` to only run the first job  
-<input> the location of your .seq file 
-<intermediateDir> your intermediate directory (holds the output of the first Mapreduce Job) which is used as input for the second job  
-<outDir> your outDir (holds the output of the second Mapreduce job)  
+The params `<intermediateDir>` and `<outDir>` specify the intermediate and output directories. These can be whatever you like. The intermediate directory will hold the output from the first MapReduce job, which is used as input for the second job. The `<params>` field supports two parameters, `-Dcombiner` and `-DrunJob2`. Setting `-Dcombiner=true` will turn on the combiner, while setting `-Dcombiner=false` will turn it off. Setting `-DrunJob2=false` will cause only the first job to run, and will cause its output to be in a .txt format instead of as sequence files. The default value for -Dcombiner is false and -DrunJob2 is true.
