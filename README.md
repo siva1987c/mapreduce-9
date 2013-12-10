@@ -7,3 +7,7 @@ rate between the words in the text file and a specified target word. To optimize
 on Amazon EC2 servers as well.
 
 Parameters can be specified in the configuration file, titled conf.xml
+
+###Usage:
+You can launch a hadoop job by running the following command:
+`$ hadoop jar proj1.jar Proj1 -conf conf.xml <params> <input> <intermediateDir> <outDir>`
