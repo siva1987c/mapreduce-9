@@ -17,4 +17,5 @@ You can launch a hadoop job by running the following command:
 
 The params `<intermediateDir>` and `<outDir>` specify the intermediate and output directories. These can be whatever you like. The intermediate directory will hold the output from the first MapReduce job, which is used as input for the second job. The `<params>` field supports two parameters, `-Dcombiner` and `-DrunJob2`. Setting `-Dcombiner=true` will turn on the combiner, while setting `-Dcombiner=false` will turn it off. Setting `-DrunJob2=false` will cause only the first job to run, and will cause its output to be in a .txt format instead of as sequence files. The default value for -Dcombiner is false and -DrunJob2 is true.
 
-Your output will be found in `<outDir>/part-r-00000`. It displays the cooccurrence rates in descending order.
+Your output will be found in `<outDir>/part-r-00000`  
+It displays the cooccurrence rates in descending order.
